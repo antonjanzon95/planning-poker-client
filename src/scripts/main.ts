@@ -14,7 +14,9 @@ app!.innerHTML = `
         <footer class="footer"></footer>
       </div>`;
 
-export const socket = io('http://localhost:3000');
+export const socket = io(
+  'https://planning-poker-api-production.up.railway.app'
+);
 
 export function init(): void {
   getAllRooms();
