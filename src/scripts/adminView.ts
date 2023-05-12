@@ -211,7 +211,8 @@ function createPreviousTopics(room: Room) {
   for (let i = 0; i < room.previousTopics.length; i++) {
     const topicContainer = document.createElement('div') as HTMLDivElement;
     const previousTopic = document.createElement('p') as HTMLParagraphElement;
-    previousTopic.innerText = room.previousTopics[i].title || '';
+    previousTopic.innerText =
+      room.previousTopics[i].title + ' - ' + room.previousTopics[i].score || '';
     previousTopicContainer.appendChild(topicContainer);
     topicContainer.appendChild(previousTopic);
   }
