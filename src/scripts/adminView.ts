@@ -26,7 +26,7 @@ export function printAdminView(room: Room) {
   createNextTopicBtn();
   createCurrentTopic(room);
   createPreviousTopics(room);
-  createEndBtn();
+  createEndBtn(room);
   //renderUserCards(room.users);
 }
 
@@ -97,13 +97,13 @@ export function createUpcomingTopicsAdmin(room: Room) {
     ) as HTMLButtonElement;
 
     removeUpcomingTopicBtn.innerText = '-';
-    removeUpcomingTopicBtn.classList.add('remove-upcoming-topic-btn')
+    removeUpcomingTopicBtn.classList.add('remove-upcoming-topic-btn');
     removeUpcomingTopicBtn.id = `${i}`;
     upcomingTopic.innerText = room.upcomingTopics[i].title || '';
     moveTopicDownBtn.innerText = 'Ner';
-    moveTopicDownBtn.classList.add('move-topic-down-btn')
+    moveTopicDownBtn.classList.add('move-topic-down-btn');
     moveTopicUpBtn.innerText = 'Upp';
-    moveTopicUpBtn.classList.add('move-topic-up-btn')
+    moveTopicUpBtn.classList.add('move-topic-up-btn');
 
     if (room.upcomingTopics.length == 1) {
       moveTopicUpBtn.disabled = true;
@@ -173,10 +173,14 @@ function createNextTopicBtn() {
 }
 
 function createCurrentTopic(room: Room) {
-  const currentTopicContainer = document.querySelector('.main-content') as HTMLDivElement;
+  const currentTopicContainer = document.querySelector(
+    '.main-content'
+  ) as HTMLDivElement;
   currentTopicContainer.innerHTML = '';
-  const currentTopicTitleContainer = document.createElement('div') as HTMLDivElement;
-  currentTopicTitleContainer.classList.add('current-topic-title-container')
+  const currentTopicTitleContainer = document.createElement(
+    'div'
+  ) as HTMLDivElement;
+  currentTopicTitleContainer.classList.add('current-topic-title-container');
   const currentTopicTitle = document.createElement('p') as HTMLParagraphElement;
 
   currentTopicTitle.innerText = room.currentTopic
@@ -215,14 +219,21 @@ function createPreviousTopics(room: Room) {
   // adminContainer.appendChild(previousTopicContainer);
 }
 
-function createEndBtn() {
+function createEndBtn(room: Room) {
   const endContainer = document.querySelector('.admin-end') as HTMLDivElement;
   endContainer.innerHTML = '';
   const endBtn = document.createElement('button') as HTMLButtonElement;
-
   endBtn.innerText = 'Avsluta';
   endBtn.addEventListener('click', endSession);
 
+  const userList = document.createElement('ul');
+  userList.classList.add('user-list');
+  room.users.forEach((user) => {
+    const userLi = document.createElement('li');
+    userLi.innerHTML = user.name;
+    userList.appendChild(userLi);
+  });
+
   // adminContainer.appendChild(endContainer);
-  endContainer.appendChild(endBtn);
+  endContainer.append(endBtn, userList);
 }
