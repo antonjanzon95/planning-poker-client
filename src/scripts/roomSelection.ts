@@ -39,7 +39,7 @@ interface Vote {
 }
 
 export function getAllRooms() {
-  fetch('http://localhost:3000/rooms')
+  fetch('https://planning-poker-api-production.up.railway.app/rooms')
     .then((res) => res.json())
     .then((data) => {
       if (data.length === 0) {
