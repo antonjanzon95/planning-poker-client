@@ -1,0 +1,77 @@
+.sessionHistoryHeading, .sessionHistorySubHeading {
+    font-family: sans-serif;
+    color: rgb(252, 252, 252);
+    text-align: center;
+}
+
+.superadminLogoutBtn, .superadminBackBtn {
+    font-family: sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px 10px 30px;
+    color: rgb(252, 252, 252);
+    background-color: $accent;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.superadminLogoutBtn:hover, .superadminBackBtn:hover {
+    border: 2px solid rgb(252, 252, 252);
+}
+
+.superadminLogoutBtn {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
+.superadminBackBtn {
+    margin-left: 30px;
+}
+
+.sessionHistoryUl {
+    font-family: sans-serif;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(252, 252, 252);
+    gap: 20px;
+}
+
+.sessionHistoryLi {
+    font-weight: bold;
+    border-radius: 3px;
+    width: 300px;
+    background-color: $info;
+    border: 2px solid $neutral;
+    padding: 10px;
+}
+
+.sessionHistoryLi:hover {
+    background-color: $accent;
+    border: 2px solid rgb(252, 252, 252);
+    cursor: pointer;
+}
+
+.sessionHeading {
+    margin-top: 80px;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(252, 252, 252);
+}
+
+.topicTitleAndScore {
+    font-weight: bold;
+    font-family: sans-serif;
+    color: rgb(252, 252, 252);
+    text-align: center;
+    margin: 20px;
+}
+
+.sessionHistoryAdminAndUsers {
+    margin-top: 20px;
+    font-family: sans-serif;
+    color: $accent;
+    text-align: center;
+}

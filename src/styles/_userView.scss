@@ -1,0 +1,94 @@
+.grid-container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 0.5fr repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.header {
+  grid-area: 1 / 1 / 2 / 6;
+  outline: 1px solid black;
+  text-align: center;
+}
+.upcoming-topics {
+  grid-area: 2 / 1 / 5 / 2;
+  outline: 1px solid black;
+  text-align: center;
+}
+.main-content {
+  grid-area: 2 / 2 / 5 / 5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  button {
+    margin: 0 auto;
+  }
+  input {
+    margin: 0 auto;
+  }
+  overflow-y: auto;
+}
+.previous-topics {
+  grid-area: 2 / 5 / 5 / 6;
+  outline: 1px solid black;
+  text-align: center;
+}
+.footer {
+  grid-area: 5 / 1 / 6 / 6;
+  outline: 1px solid black;
+}
+
+.user-card {
+  min-width: 100px;
+  min-height: 100px;
+  h3 {
+    background-color: rgba(4, 52, 100, 0.369);
+    padding: 15px;
+    border-radius: 5px;
+  }
+}
+
+.user-card-container {
+  padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  div {
+    font-size: 1.7rem;
+  }
+}
+.voting-card-container {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  div {
+    font-size: 1.7rem;
+    width: 60px;
+    height: 100px;
+    background-color: $accent;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.vote-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.vote-card {
+  height: 100px;
+  width: 60px;
+  background-color: $accent;
+  border-radius: 5px;
+}
